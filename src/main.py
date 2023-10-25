@@ -11,20 +11,23 @@ def load_word_list() -> list[str]:
 def game():
     word: str = choice(load_word_list())   
     guesses: list[str] = list("_" for _ in word)
+    wrong_guesses: list[str] = []
     game_over: bool = False
     max_tries: int = 11
 
     while (not game_over):
+        if len(wrong_guesses):
+            print(f"Wrong: {' '.join(wrong_guesses)}")
         print(" ".join(guesses))
-        i = input(f"{max_tries} tries left. Type you guess: ").lower()
+        i = input(f"{max_tries} tries left. Type your guess: ").lower()
         for letter in i:
             if letter in word:
-                index = word.find(letter)
-                while (index != -1):
+                index: int = -1
+                while ((index := word.find(letter, index+1)) != -1):
                     guesses.pop(index)
                     guesses.insert(index, letter)
-                    index = word.find(letter, index+1)
             else:
+                wrong_guesses.append(letter)
                 max_tries -= 1
                 if max_tries == 0:
                     print("You lose")
