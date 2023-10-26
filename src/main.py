@@ -4,7 +4,7 @@ def load_word_list() -> list[str]:
     word_list: list[str] = []
     with open("res/words.txt", "r") as f:
         for line in f.readlines():
-            word_list.append(line.strip().lower())
+            word_list.append(line.strip().upper())
     return word_list 
 
 
@@ -12,14 +12,15 @@ def game():
     word: str = choice(load_word_list())   
     guesses: list[str] = list("_" for _ in word)
     wrong_guesses: list[str] = []
-    game_over: bool = False
     max_tries: int = 11
 
+    game_over: bool = False
     while (not game_over):
         if len(wrong_guesses):
-            print(f"Wrong: {' '.join(wrong_guesses)}")
+            print(f"Wrong guesses: {' '.join(wrong_guesses)}")
         print(" ".join(guesses))
-        i = input(f"{max_tries} tries left. Type your guess: ").lower()
+        i = input(f"{max_tries} tries left. Type your guess: ").upper()
+        print()
         for letter in i:
             if letter in word:
                 index: int = -1
