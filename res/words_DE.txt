@@ -762,7 +762,6 @@ Wissenschaftsbiologen
 Immunogenetiker
 Pathologen
 Neurobiologen
-Theoretische Physiker
 Mathematische Biologen
 Paläoanthropologen
 Geobiologen
@@ -785,7 +784,7 @@ Phänomenologie
 Petrologie
 Quantenfeldtheorie
 Hyperkomplexität
-Plasmaphysi    Hund
+Hund
 Ball
 Kind
 Mama
@@ -891,7 +890,6 @@ Neurobiologe
 Neurochirurg
 Molekularbiologe
 Pathologe
-Theoretischer Physiker
 Epistemologie
 Seismograf
 Ozeanograf
@@ -900,7 +898,6 @@ Glaziologe
 Neuroimmunologie
 Nephrologe
 Genom
-Monoklonale Antikörper
 Nukleotid
 Aminosäure
 Neurotransmitter

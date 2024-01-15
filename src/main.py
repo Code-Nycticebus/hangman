@@ -1,4 +1,5 @@
 from random import choice
+import pickle
 
 WORD_TEXT_FILE = "res/words_DE.txt"
 
@@ -15,7 +16,7 @@ def game() -> None:
     word: str = choice(load_word_list())
     guesses: list[str] = list("_" for _ in word)
     wrong_guesses: list[str] = []
-    max_tries: int = 11
+    max_tries: int = 7
 
     game_over: bool = False
     while not game_over:
@@ -46,6 +47,11 @@ def game() -> None:
             game_over = True
             continue
 
+def main() -> None:
+    retry: bool = True
+    while retry:
+        game()
+        retry = True if input("Retry? [Y/n]") else False
 
 if __name__ == "__main__":
-    game()
+    main()
