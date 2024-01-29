@@ -6,7 +6,7 @@ WORD_TEXT_FILE = "res/words_DE.txt"
 
 def load_word_list() -> list[str]:
     word_list: list[str] = []
-    with open(WORD_TEXT_FILE, "r") as f:
+    with open(WORD_TEXT_FILE, "r", encoding='utf-8') as f:
         for line in f.readlines():
             word_list.append(line.strip().upper())
     return word_list
